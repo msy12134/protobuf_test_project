@@ -1,0 +1,7 @@
+先开启服务端，进入服务端根目录
+运行：mvn exec:java -Dexec.mainClass="com.example.server.MyServiceServer"
+
+然后进入客户端根目录
+运行： mvn scala:run -DmainClass=com.example.client.ClientApp
+打包：mvn package
+运行jar包：java -jar grpc-client-1.0-SNAPSHOT.jar(cd target目录下)
