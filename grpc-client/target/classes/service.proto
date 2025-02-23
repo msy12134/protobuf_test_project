@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package service;
+
+import "common.proto";
+
+option java_package = "com.example.service";
+option java_outer_classname = "ServiceProto";
+
+// 请求消息
+message Request {
+  common.Metadata metadata = 1;
+  repeated common.Detail details = 2;
+  string query = 3;
+}
+
+// 响应消息
+message Response {
+  common.Metadata metadata = 1;
+  string status = 2;
+  repeated common.Detail results = 3;
+}
+
+// 定义一个服务
+service MyService {
+  rpc Process(Request) returns (Response);
+}

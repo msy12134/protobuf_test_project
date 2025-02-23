@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package common;
+
+option java_package = "com.example.common";
+option java_outer_classname = "CommonProto";
+
+// 公共的元数据
+message Metadata {
+  string requestId = 1;
+  string timestamp = 2;
+}
+
+// 详情数据，供Request和Response复用
+message Detail {
+  string info = 1;
+  int32 count = 2;
+}
